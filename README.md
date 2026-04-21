@@ -1,19 +1,20 @@
 # AI Event Hunter
 
-Discovers AI events (in-person in Serbia, online globally) and sends a digest to Telegram every Mon/Wed/Fri. Reply "add 1 3" to add events to your "AI Events" Google Calendar. No laptop needs to be on — runs via Claude Code scheduled agents.
+Discovers AI events (in-person in Serbia, online globally) and sends a digest to Telegram every Mon/Wed/Fri. Reply "add 1 3" to add events to your "AI Events" Google Calendar. No laptop needs to be on — runs via Claude Code cloud scheduled agents.
 
 ## How it works
 
 1. **Hunt agent** (Mon/Wed/Fri 9am CET): searches Luma, Meetup, Eventbrite, and the web for AI events → posts a numbered digest to your Telegram channel
 2. You reply "add 1" or "add 1 3" or "add all" to approve events
-3. **Approve agent** (3x daily: 9am, 1pm, 6pm CET): sees your reply → adds events to Google Calendar
+3. **Approve agent** (once daily): sees your reply → adds events to your "AI Events" Google Calendar via connector
 
 ## Setup
 
 ### Prerequisites
 - Python 3.11+
 - A GitHub repo for this project (for state persistence between cloud agent runs)
-- Claude Code with scheduled agents enabled
+- Claude Code with Google Calendar connector enabled (claude.ai → Connectors)
+- Claude Code cloud scheduled tasks enabled
 
 ### Install
 
@@ -49,36 +50,21 @@ git push -u origin main
 6. Follow the printed instructions to get your channel ID, add it to `.env` as `TELEGRAM_CHANNEL_ID`
 7. Run `python setup_telegram.py` again — should print "Test message posted ✅"
 
-### 3. Google Calendar
+### 3. Schedule agents
 
-1. Go to [console.cloud.google.com](https://console.cloud.google.com) → New project
-2. Enable **Google Calendar API**
-3. Credentials → Create credentials → OAuth client ID → Desktop app → Download JSON
-4. Save the downloaded file as `google/.google-credentials.json`
-5. Run:
-   ```bash
-   source venv/bin/activate
-   python setup_google.py
-   ```
-6. Complete the browser auth flow
-7. Copy the three printed values into `.env`:
-   - `GOOGLE_REFRESH_TOKEN`
-   - `GOOGLE_CLIENT_ID`
-   - `GOOGLE_CLIENT_SECRET`
-
-### 4. Schedule agents
-
-Use the Claude Code `schedule` skill to create two triggers:
+Use the Claude Code **Schedule** page (Desktop app or cloud) to create two cloud tasks:
 
 **Hunt agent** (searches and posts events):
-- Prompt: `Read and follow exactly the instructions in ~/source/ai_event_hunter/HUNT_AGENT.md`
-- Schedule: `0 8 * * 1,3,5` (Mon/Wed/Fri 8am UTC = 9am CET)
-- Env vars: all five from `.env`
+- Prompt: `Read and follow exactly the instructions in HUNT_AGENT.md`
+- Schedule: Mon/Wed/Fri at 9am CET
+- Env vars: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHANNEL_ID`
+- Connector: none needed
 
 **Approve agent** (processes replies, adds to calendar):
-- Prompt: `Read and follow exactly the instructions in ~/source/ai_event_hunter/APPROVE_AGENT.md`
-- Schedule: `0 8,12,17 * * *` (8am, 12pm, 5pm UTC)
-- Env vars: all five from `.env`
+- Prompt: `Read and follow exactly the instructions in APPROVE_AGENT.md`
+- Schedule: Daily at 6pm CET
+- Env vars: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHANNEL_ID`
+- Connector: Google Calendar (already connected at claude.ai)
 
 ## Usage
 
@@ -98,7 +84,7 @@ Reply with:
 - `add 1 3` — add events 1 and 3
 - `add all` — add everything
 
-The next approve agent run (within a few hours) will add approved events to your "AI Events" Google Calendar.
+The next daily approve run will add approved events to your "AI Events" Google Calendar.
 
 ## Customising search
 

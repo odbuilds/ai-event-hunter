@@ -1,21 +1,30 @@
 # Approve Agent — Instructions
 
-Runs 3x daily: 9am, 1pm, 6pm CET. Follow these steps exactly.
+Runs once daily. Follow these steps exactly.
 
-## Step 1: Check for replies and process approvals
+## Step 1: Check for replies
 ```bash
 cd ~/source/ai_event_hunter
 source venv/bin/activate
 python check_replies.py
 ```
-Read the output. Lines starting with ✅ mean events were added to Google Calendar.
 
-## Step 2: Commit if state changed
-Only commit if `check_replies.py` output showed updates (new updates found or events added):
+If output is "No new Telegram updates." or "No approvals found." — stop here. No commit needed.
+
+## Step 2: Add approved events to Google Calendar
+If the script printed a JSON array of events, add each one to the "AI Events" Google Calendar using the Google Calendar connector.
+
+For each event in the JSON output:
+- **Title:** `name`
+- **Start:** `start_iso` (Europe/Belgrade timezone)
+- **End:** `end_iso` (Europe/Belgrade timezone)
+- **Location:** `location`
+- **Description:** `url`
+
+## Step 3: Commit state.json
 ```bash
 cd ~/source/ai_event_hunter
 git add state.json
-git commit -m "state: approve $(date +%Y-%m-%d-%H%M)"
+git commit -m "state: approve $(date +%Y-%m-%d)"
 git push
 ```
-If the output was "No new Telegram updates." — skip the commit.
