@@ -20,8 +20,8 @@ For each approved event, add it to the "AI Events" Google Calendar using the Goo
 
 Use these fields:
 - **Title:** `name`
-- **Start:** `datetime_iso` in Europe/Belgrade timezone
-- **End:** `datetime_iso` + 1 hour, in Europe/Belgrade timezone
+- **Start:** `datetime_iso` — treat as Europe/Belgrade local time (no conversion needed, it is already local)
+- **End:** `datetime_iso` + 1 hour (same timezone)
 - **Location:** `location`
 - **Description:** `url`
 
