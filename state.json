@@ -6,71 +6,28 @@
     "https://www.eventbrite.com/e/virtual-free-pass-odsc-ai-west-2026-conference-tickets-1985809081419",
     "https://biotechfutureforum.gov.rs/",
     "https://datasciconference.com/",
-    "https://www.eventbrite.com/e/xtremeai-2026-online-conference-tickets-1750726131989"
+    "https://www.eventbrite.com/e/xtremeai-2026-online-conference-tickets-1750726131989",
+    "https://www.eventbrite.com/e/devnetwork-ai-ml-hackathon-2026-registration-1979273879454",
+    "https://www.eventbrite.com/e/the-ai-enterprise-conference-2026-tickets-1902063135039"
   ],
   "pending_events": {
     "1": {
-      "name": "ODSC AI East 2026 \u2014 Virtual Conference",
+      "name": "DevNetwork AI + ML Hackathon 2026",
       "type": "online",
       "location": "Online",
-      "date": "Apr 28, 13:00",
-      "datetime_iso": "2026-04-28T13:00:00",
-      "url": "https://www.eventbrite.com/e/odsc-ai-east-2026-virtual-conference-registration-tickets-1780276347479",
-      "message_id": 6
+      "date": "May 11, 10:00",
+      "datetime_iso": "2026-05-11T10:00:00",
+      "url": "https://www.eventbrite.com/e/devnetwork-ai-ml-hackathon-2026-registration-1979273879454",
+      "message_id": 8
     },
     "2": {
-      "name": "AI Week 2026",
-      "type": "in-person",
-      "location": "Belgrade",
-      "date": "May 25, 18:00",
-      "datetime_iso": "2026-05-25T18:00:00",
-      "url": "https://startit.rs/ai-week/",
-      "message_id": 6
-    },
-    "3": {
-      "name": "Machine Learning Conference Serbia 2026",
-      "type": "in-person",
-      "location": "Subotica",
-      "date": "May 29, 18:00",
-      "datetime_iso": "2026-05-29T18:00:00",
-      "url": "https://ml-conference.rs/",
-      "message_id": 6
-    },
-    "4": {
-      "name": "ODSC AI West 2026 \u2014 Virtual Conference",
+      "name": "The AI Enterprise Conference 2026",
       "type": "online",
       "location": "Online",
-      "date": "Oct 27, 16:00",
-      "datetime_iso": "2026-10-27T16:00:00",
-      "url": "https://www.eventbrite.com/e/virtual-free-pass-odsc-ai-west-2026-conference-tickets-1985809081419",
-      "message_id": 6
-    },
-    "5": {
-      "name": "AI_4_LIFE \u2014 Biotech Future Forum",
-      "type": "in-person",
-      "location": "Belgrade",
-      "date": "Oct 29, 18:00",
-      "datetime_iso": "2026-10-29T18:00:00",
-      "url": "https://biotechfutureforum.gov.rs/",
-      "message_id": 6
-    },
-    "6": {
-      "name": "DSC Europe 2026 \u2014 AI Builders Conference",
-      "type": "in-person",
-      "location": "Belgrade",
-      "date": "Nov 16, 18:00",
-      "datetime_iso": "2026-11-16T18:00:00",
-      "url": "https://datasciconference.com/",
-      "message_id": 6
-    },
-    "7": {
-      "name": "XtremeAI 2026 Online Conference",
-      "type": "online",
-      "location": "Online",
-      "date": "Nov 24, 06:00",
-      "datetime_iso": "2026-11-24T06:00:00",
-      "url": "https://www.eventbrite.com/e/xtremeai-2026-online-conference-tickets-1750726131989",
-      "message_id": 6
+      "date": "Sep 1, 09:00",
+      "datetime_iso": "2026-09-01T09:00:00",
+      "url": "https://www.eventbrite.com/e/the-ai-enterprise-conference-2026-tickets-1902063135039",
+      "message_id": 8
     }
   },
   "telegram_offset": 0,
