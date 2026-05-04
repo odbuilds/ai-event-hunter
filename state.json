@@ -10,26 +10,7 @@
     "https://www.eventbrite.com/e/devnetwork-ai-ml-hackathon-2026-registration-1979273879454",
     "https://www.eventbrite.com/e/the-ai-enterprise-conference-2026-tickets-1902063135039"
   ],
-  "pending_events": {
-    "1": {
-      "name": "DevNetwork AI + ML Hackathon 2026",
-      "type": "online",
-      "location": "Online",
-      "date": "May 11, 10:00",
-      "datetime_iso": "2026-05-11T10:00:00",
-      "url": "https://www.eventbrite.com/e/devnetwork-ai-ml-hackathon-2026-registration-1979273879454",
-      "message_id": 8
-    },
-    "2": {
-      "name": "The AI Enterprise Conference 2026",
-      "type": "online",
-      "location": "Online",
-      "date": "Sep 1, 09:00",
-      "datetime_iso": "2026-09-01T09:00:00",
-      "url": "https://www.eventbrite.com/e/the-ai-enterprise-conference-2026-tickets-1902063135039",
-      "message_id": 8
-    }
-  },
-  "telegram_offset": 0,
+  "pending_events": {},
+  "telegram_offset": 558328947,
   "ai_calendar_id": null
 }
