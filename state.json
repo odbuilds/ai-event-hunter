@@ -8,9 +8,60 @@
     "https://datasciconference.com/",
     "https://www.eventbrite.com/e/xtremeai-2026-online-conference-tickets-1750726131989",
     "https://www.eventbrite.com/e/devnetwork-ai-ml-hackathon-2026-registration-1979273879454",
-    "https://www.eventbrite.com/e/the-ai-enterprise-conference-2026-tickets-1902063135039"
+    "https://www.eventbrite.com/e/the-ai-enterprise-conference-2026-tickets-1902063135039",
+    "https://startit.rs/belgrade-machine-learning-hackathon/",
+    "https://aitechsummit-tbm.ai/",
+    "https://www.ai-smart-conference.com/",
+    "https://www.eventbrite.com/e/collide-data-ai-conference-2026-tickets-1902175932419",
+    "https://www.eventbrite.com/e/odsc-ai-west-2026-virtual-conference-registration-tickets-1982432141902"
   ],
-  "pending_events": {},
+  "pending_events": {
+    "1": {
+      "name": "Belgrade Machine Learning Hackathon",
+      "type": "in-person",
+      "location": "Belgrade",
+      "date": "Jun 1, 09:00",
+      "datetime_iso": "2026-06-01T09:00:00",
+      "url": "https://startit.rs/belgrade-machine-learning-hackathon/",
+      "message_id": 0
+    },
+    "2": {
+      "name": "AI Tech Summit Belgrade 2026",
+      "type": "in-person",
+      "location": "Belgrade",
+      "date": "Sep 3, 09:00",
+      "datetime_iso": "2026-09-03T09:00:00",
+      "url": "https://aitechsummit-tbm.ai/",
+      "message_id": 0
+    },
+    "3": {
+      "name": "AI-SMART Conference 2026",
+      "type": "in-person",
+      "location": "Belgrade",
+      "date": "Sep 23, 09:00",
+      "datetime_iso": "2026-09-23T09:00:00",
+      "url": "https://www.ai-smart-conference.com/",
+      "message_id": 0
+    },
+    "4": {
+      "name": "COLLIDE Data + AI Conference 2026",
+      "type": "online",
+      "location": "Online",
+      "date": "Oct 1, 09:00",
+      "datetime_iso": "2026-10-01T09:00:00",
+      "url": "https://www.eventbrite.com/e/collide-data-ai-conference-2026-tickets-1902175932419",
+      "message_id": 0
+    },
+    "5": {
+      "name": "ODSC AI West 2026 Virtual Conference",
+      "type": "online",
+      "location": "Online",
+      "date": "Oct 27, 13:00",
+      "datetime_iso": "2026-10-27T13:00:00",
+      "url": "https://www.eventbrite.com/e/odsc-ai-west-2026-virtual-conference-registration-tickets-1982432141902",
+      "message_id": 0
+    }
+  },
   "telegram_offset": 558328947,
   "ai_calendar_id": null
 }
