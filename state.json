@@ -13,7 +13,8 @@
     "https://aitechsummit-tbm.ai/",
     "https://www.ai-smart-conference.com/",
     "https://www.eventbrite.com/e/collide-data-ai-conference-2026-tickets-1902175932419",
-    "https://www.eventbrite.com/e/odsc-ai-west-2026-virtual-conference-registration-tickets-1982432141902"
+    "https://www.eventbrite.com/e/odsc-ai-west-2026-virtual-conference-registration-tickets-1982432141902",
+    "https://www.eventbrite.com/e/25-virtual-ticket-wisdom-ai-summit-2026-tickets-1985140945005"
   ],
   "pending_events": {
     "1": {
@@ -60,6 +61,15 @@
       "datetime_iso": "2026-10-27T13:00:00",
       "url": "https://www.eventbrite.com/e/odsc-ai-west-2026-virtual-conference-registration-tickets-1982432141902",
       "message_id": 0
+    },
+    "6": {
+      "name": "Wisdom & AI Summit 2026",
+      "type": "online",
+      "location": "Online",
+      "date": "May 14, 11:00",
+      "datetime_iso": "2026-05-14T11:00:00",
+      "url": "https://www.eventbrite.com/e/25-virtual-ticket-wisdom-ai-summit-2026-tickets-1985140945005",
+      "message_id": null
     }
   },
   "telegram_offset": 558328947,
