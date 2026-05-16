@@ -24,7 +24,7 @@
       "date": "Jun 1, 09:00",
       "datetime_iso": "2026-06-01T09:00:00",
       "url": "https://startit.rs/belgrade-machine-learning-hackathon/",
-      "message_id": 0
+      "message_id": 53
     },
     "2": {
       "name": "AI Tech Summit Belgrade 2026",
@@ -33,7 +33,7 @@
       "date": "Sep 3, 09:00",
       "datetime_iso": "2026-09-03T09:00:00",
       "url": "https://aitechsummit-tbm.ai/",
-      "message_id": 0
+      "message_id": 53
     },
     "3": {
       "name": "AI-SMART Conference 2026",
@@ -42,7 +42,7 @@
       "date": "Sep 23, 09:00",
       "datetime_iso": "2026-09-23T09:00:00",
       "url": "https://www.ai-smart-conference.com/",
-      "message_id": 0
+      "message_id": 53
     },
     "4": {
       "name": "COLLIDE Data + AI Conference 2026",
@@ -51,7 +51,7 @@
       "date": "Oct 1, 09:00",
       "datetime_iso": "2026-10-01T09:00:00",
       "url": "https://www.eventbrite.com/e/collide-data-ai-conference-2026-tickets-1902175932419",
-      "message_id": 0
+      "message_id": 53
     },
     "5": {
       "name": "ODSC AI West 2026 Virtual Conference",
@@ -60,7 +60,7 @@
       "date": "Oct 27, 13:00",
       "datetime_iso": "2026-10-27T13:00:00",
       "url": "https://www.eventbrite.com/e/odsc-ai-west-2026-virtual-conference-registration-tickets-1982432141902",
-      "message_id": 0
+      "message_id": 53
     },
     "6": {
       "name": "Wisdom & AI Summit 2026",
@@ -69,7 +69,7 @@
       "date": "May 14, 11:00",
       "datetime_iso": "2026-05-14T11:00:00",
       "url": "https://www.eventbrite.com/e/25-virtual-ticket-wisdom-ai-summit-2026-tickets-1985140945005",
-      "message_id": null
+      "message_id": 53
     }
   },
   "telegram_offset": 558328947,
