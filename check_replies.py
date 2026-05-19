@@ -1,6 +1,6 @@
 """
 CLI: python check_replies.py
-Called by approve agent. Checks Telegram for "add X Y" replies.
+Called by approve agent. Checks Telegram for "add X Y" and "reject X Y" replies.
 Prints approved events as JSON and updates state.json.
 The calling agent adds events to Google Calendar via connector.
 """
@@ -24,6 +24,18 @@ def parse_add_command(text):
     return [int(n) for n in nums] if nums else []
 
 
+def parse_reject_command(text):
+    """Return list of int event numbers, 'all', or [] if not a reject command."""
+    text = (text or "").strip().lower()
+    if not text.startswith("reject"):
+        return []
+    rest = text[6:].strip()
+    if rest == "all":
+        return "all"
+    nums = re.findall(r"\d+", rest)
+    return [int(n) for n in nums] if nums else []
+
+
 def _end_iso(start_iso):
     return (datetime.fromisoformat(start_iso) + timedelta(hours=1)).isoformat()
 
@@ -39,37 +51,50 @@ def main():
     state["telegram_offset"] = updates[-1]["update_id"] + 1
     pending = state.get("pending_events", {})
     to_add = []
+    rejected = []
 
     for update in updates:
         msg = update.get("message") or update.get("channel_post")
         if not msg:
             continue
-        approved = parse_add_command(msg.get("text", ""))
-        if not approved:
+        text = msg.get("text", "")
+
+        approved = parse_add_command(text)
+        if approved:
+            keys = list(pending.keys()) if approved == "all" else [str(n) for n in approved]
+            for key in keys:
+                if key not in pending:
+                    continue
+                ev = pending[key]
+                start_iso = ev.get("datetime_iso") or datetime.now().replace(
+                    hour=18, minute=0, second=0, microsecond=0
+                ).isoformat()
+                to_add.append({
+                    "name": ev["name"],
+                    "location": ev.get("location", "Online"),
+                    "url": ev["url"],
+                    "start_iso": start_iso,
+                    "end_iso": _end_iso(start_iso),
+                })
+                del pending[key]
             continue
 
-        keys = list(pending.keys()) if approved == "all" else [str(n) for n in approved]
-        for key in keys:
-            if key not in pending:
-                continue
-            ev = pending[key]
-            start_iso = ev.get("datetime_iso") or datetime.now().replace(
-                hour=18, minute=0, second=0, microsecond=0
-            ).isoformat()
-            to_add.append({
-                "name": ev["name"],
-                "location": ev.get("location", "Online"),
-                "url": ev["url"],
-                "start_iso": start_iso,
-                "end_iso": _end_iso(start_iso),
-            })
-            del pending[key]
+        rejected_nums = parse_reject_command(text)
+        if rejected_nums:
+            keys = list(pending.keys()) if rejected_nums == "all" else [str(n) for n in rejected_nums]
+            for key in keys:
+                if key not in pending:
+                    continue
+                rejected.append(pending[key]["name"])
+                del pending[key]
 
     state["pending_events"] = pending
     save_state(state)
 
     if to_add:
         print(json.dumps(to_add, indent=2))
+    elif rejected:
+        print(f"Rejected: {', '.join(rejected)}")
     else:
         print("No approvals found.")
 
